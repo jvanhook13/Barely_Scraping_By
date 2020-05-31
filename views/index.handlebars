@@ -1,0 +1,52 @@
+<main>
+<section>
+
+    {{#each songs}}
+
+    <div>
+        <div>
+            <h2>
+                <a href="{{this.link}}" target="_blank">{{this.title}}</a>
+            </h2>
+        </div>
+
+        <div>
+            {{this.snipText}}
+        </div>
+
+        <div>
+
+            <a data-id="{{this._id}}">
+                comments </a>
+
+        </div>
+        <div class="comment">
+
+            {{>comment/comments comment=this.comments}}
+
+            <div>
+                <form>
+                    <div>Leave a comment:</div>
+                    <div>
+                        <input type="text">
+                        <label>your name</label>
+                    </div>
+                    <div>
+                        <input type="text">
+                        <label>say something...</label>
+                    </div>
+                    <button data-id="{{this._id}}">
+                        add
+                    </button>
+                </form>
+            </div>
+
+        </div> {{!--close Comment section--}}
+
+    </div>
+    {{/each}}
+
+
+
+</section>
+</main>
